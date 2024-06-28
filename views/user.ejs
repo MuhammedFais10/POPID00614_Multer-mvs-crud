@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/add" enctype="multipart/form-data" method="post">
+      <label for="name">Name:</label>
+      <input type="text " name="name" />
+      <label for="image">Image:</label>
+      <input type="file" id="iameg" name="file" required />
+
+      <button type="submit">submit</button>
+    </form>
+
+    <div>
+      <ul>
+        <% users.forEach(user => { %>
+        <li>
+          <p><%= user.name %></p>
+
+          <img
+            src="/uploads/<%= user.file %>"
+            alt=""
+            width="200"
+            height="250"
+          />
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>
